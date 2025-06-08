@@ -1,0 +1,281 @@
+<!-- Paste this entire content into your HTML file -->
+
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ethical Hacker Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {margin: 0;padding: 0;box-sizing: border-box;scroll-behavior: smooth;}
+    body {
+      font-family: 'Courier New', monospace;
+      background-color: #0d0d0d;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+    nav {
+      position: fixed;top: 0;left: 0;right: 0;
+      background: #101010;
+      display: flex;justify-content: space-between;align-items: center;
+      padding: 15px 30px;z-index: 1000;
+      border-bottom: 1px solid #222;
+    }
+    .brand {font-weight: bold;color: #00ff9f;font-size: 18px;}
+    .menu-toggle {
+      position: relative;
+    }
+    .dropdown {
+      position: absolute;
+      top: 35px;
+      right: 0;
+      background: #111;
+      padding: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #222;
+      display: none;
+      flex-direction: column;
+      min-width: 140px;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+    }
+    .dropdown.show {
+      display: flex;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .dropdown a {
+      padding: 10px 20px;
+      color: #e0e0e0;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .dropdown a:hover {
+      background: #1a1a1a;
+      color: #00ff9f;
+    }
+    main {
+      max-width: 960px;margin: 140px auto 40px;padding: 0 20px;
+    }
+    section {margin-bottom: 60px;opacity: 0;transform: translateY(20px);transition: all 0.6s ease;}
+    section.visible {opacity: 1;transform: translateY(0);}
+    .box {
+      background: #111;padding: 30px;
+      border: 1px solid #222;border-radius: 10px;
+      box-shadow: 0 0 10px #000;
+    }
+    .box h2 {color: #00ff9f;margin-bottom: 15px;font-size: 22px;}
+    .box p, .box ul, .box a {font-size: 16px;}
+    .box ul {list-style: none;padding-left: 0;}
+    .box ul li::before {content: "$ ";color: #00ff9f;}
+    .img-placeholder {
+      background: #000;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      max-width: 320px;
+      height: auto;
+      margin: 0 auto 20px;
+      border-radius: 6px;
+      border: 1px dashed #333;
+      background-image: url('https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .socials a {
+      margin: 10px;
+      color: #00ff9f;
+      text-decoration: none;
+      font-size: 24px;
+    }
+    .socials a:hover {
+      color: #00cc88;
+    }
+    footer {text-align: center;font-size: 13px;color: #444;padding: 20px;}
+    #matrix {
+      position: fixed;top: 0;left: 0;width: 100%;height: 100%;
+      background: black;z-index: 9999;
+    }
+    #preloader {
+      position: fixed;top: 0;left: 0;width: 100%;height: 100%;
+      background: black;z-index: 10000;
+      display: flex;flex-direction: column;justify-content: center;align-items: center;
+    }
+    .progress-bar {
+      width: 60%;height: 8px;background: #222;margin-top: 20px;
+      border-radius: 5px;overflow: hidden;
+    }
+    .progress {
+      height: 100%;background: #00997a;width: 0%;transition: width 1.2s ease;
+    }
+  </style>
+</head>
+<body>  
+  <div id="preloader">
+    <canvas id="matrix"></canvas>
+    <div class="progress-bar"><div class="progress" id="progress"></div></div>
+  </div>  
+
+  <nav>
+    <div class="brand">YourName</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span style="cursor:pointer;color:#e0e0e0;">≡ Menu</span>
+      <div class="dropdown" id="menuDropdown">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#milestones">Milestones</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="#socials">Socials</a>
+        <a href="#external">External</a>
+      </div>
+    </div>
+  </nav>  
+
+  <main>
+    <section id="about">
+      <div class="box">
+        <div class="img-placeholder"></div>
+        <h2>About Me</h2>
+        <p>I am an ethical hacker passionate about breaking things to secure them. I work on offensive and defensive cyber techniques, and I believe in digital privacy, responsible disclosure, and open-source collaboration.</p>
+      </div>
+    </section>
+    <section id="skills">
+      <div class="box">
+        <h2>Skills</h2>
+        <ul>
+          <li>Penetration Testing (Web, Network, WiFi)</li>
+          <li>Burp Suite, Nmap, Metasploit, Wireshark</li>
+          <li>Python, Bash, JavaScript</li>
+          <li>Linux Hardening & Forensics</li>
+          <li>Social Engineering Awareness</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="milestones">
+      <div class="box">
+        <h2>Milestones</h2>
+        <ol>
+          <li>Certified Ethical Hacker (CEH) Completed - 2023</li>
+          <li>Bug Bounty on HackerOne - Critical RCE reported - 2024</li>
+          <li>Red Team Assessment at XYZ Org - 2024</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="box">
+        <h2>Projects</h2>
+        <ul>
+          <li><strong>ReconTool:</strong> Automated recon tool for OSINT and subdomain hunting</li>
+          <li><strong>PhishTrap:</strong> Honeypot email trap system for phishing analysis</li>
+          <li><strong>SecureShell:</strong> Hardened Linux bash shell with anomaly alerts</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="box">
+        <h2>Contact</h2>
+        <p>Email: hacker@protonmail.com</p>
+        <p>Available for freelance or full-time positions globally.</p>
+      </div>
+    </section>
+
+    <section id="socials">
+      <div class="box">
+        <h2>Socials</h2>
+        <div class="socials">
+          <a href="https://github.com/yourhandle" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/yourhandle" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://twitter.com/yourhandle" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="mailto:hacker@protonmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="external">
+      <div class="box">
+        <h2>External</h2>
+        <p>Add your external links or badges here.</p>
+        <a href="#" target="_blank">
+          <img src="https://via.placeholder.com/120x40?text=Logo" alt="External Logo" style="height: 40px;">
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 YourName. Built with curiosity & caffeine.
+  </footer>
+
+  <script>
+    const canvas = document.getElementById("matrix");
+    const ctx = canvas.getContext("2d");
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+    const letters = "アアイウエオカキクケコサシスセソ0123456789∑∆πΨΩ".split("");
+    const fontSize = 12;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+    function drawMatrix() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.06)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#0f0";
+      ctx.font = fontSize + "px monospace";
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > canvas.height || Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+    let matrixInterval = setInterval(drawMatrix, 20);
+
+    const progress = document.getElementById("progress");
+    setTimeout(() => progress.style.width = "100%", 200);
+    setTimeout(() => {
+      clearInterval(matrixInterval);
+      document.getElementById("preloader").style.display = "none";
+    }, 1000);
+
+    function toggleMenu() {
+      const dropdown = document.getElementById("menuDropdown");
+      dropdown.classList.toggle("show");
+    }
+
+    // Reveal animation on scroll
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+    sections.forEach(section => observer.observe(section));
+
+    // Scroll to section with offset for nav
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute("href").slice(1);
+        const target = document.getElementById(targetId);
+        const navHeight = document.querySelector("nav").offsetHeight;
+
+        if (target) {
+          const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: "smooth"
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
